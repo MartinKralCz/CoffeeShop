@@ -1,0 +1,17 @@
+version: '1'
+
+services:
+  db:
+    image: 'mysql:latest'
+    ports:
+      - "3306:3306"
+    container_name: db
+    environment:
+        MYSQL_DATABASE: 'db-coffeeshop'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: 'user'
+        MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - mysqldata:/var/lib/mysql
+volumes:
+  mysqldata:
